@@ -438,7 +438,7 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
 <p>这里你看到的 <code>yarn dev</code> 是我在package.json中写了以下内容</p>
 <pre class=" language-json"><code class="language-json"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"hexo g &amp;&amp; hexo server"</span><span class="token punctuation">,</span>
-    <span class="token property">"deplpy"</span><span class="token operator">:</span> <span class="token string">"hexo clean &amp;&amp; hexo deploy"</span>
+    <span class="token property">"deploy"</span><span class="token operator">:</span> <span class="token string">"hexo clean &amp;&amp; hexo deploy"</span>
 <span class="token punctuation">}</span></code></pre>
 <p>yarn 类似于npm 这里也不展开。你可以使用npm。我注意执行 <code>hexo init</code> 之后，hexo 会使用yarn安装默认的依赖。并在项目目录中生成yarn.lock文件。</p>
 <p>根目录下 _config.yml 是对生成静态文件的一个配置文件。yml 语法可以自行了解。</p>
