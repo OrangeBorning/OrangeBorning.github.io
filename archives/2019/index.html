@@ -1,11 +1,11 @@
 <!DOCTYPE HTML>
-<html lang="">
+<html lang="zh-CN">
 
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Archives: 2019, 朱晓鹏">
-    <meta name="description" content="Archives: 2019 | 朱晓鹏">
+    <meta name="keywords" content="归档: 2019, 朱晓鹏">
+    <meta name="description" content="归档: 2019 | 朱晓鹏">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Archives: 2019 | 朱晓鹏</title>
+    <title>归档: 2019 | 朱晓鹏</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -94,18 +94,9 @@
         </a>
     </li>
     
-    <li class="hide-on-med-and-down">
-        <a href="/toys" class="waves-effect waves-light">
-            
-            <i class="fa fa-code"></i>
-            
-            <span>玩具</span>
-        </a>
-    </li>
-    
     <li>
         <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-            <i id="searchIcon" class="fa fa-search" title="Search"></i>
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
         </a>
     </li>
 </ul>
@@ -170,15 +161,6 @@
                 <i class="fa fa-fw fa-user-circle-o"></i>
                 
                 关于我
-            </a>
-        </li>
-        
-        <li>
-            <a href="/toys" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-code"></i>
-                
-                玩具
             </a>
         </li>
         
@@ -300,7 +282,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     let option = {
         title: {
             top: 0,
-            text: 'Post Calendar',
+            text: '文章日历',
             left: 'center',
             textStyle: {
                 color: '#3C4858'
@@ -346,12 +328,12 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 show: false
             },
             monthLabel: {
-                nameMap: 'en',
+                nameMap: 'cn',
                 fontSize: 11
             },
             dayLabel: {
                 formatter: '{start}  1st',
-                nameMap: 'en',
+                nameMap: 'cn',
                 fontSize: 11
             }
         }],
@@ -803,8 +785,8 @@ nodejs这里使用到了 pupeteer, 通过无头浏览器提供的api生成pdf，
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
         <div id="searchResult"></div>
