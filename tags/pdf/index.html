@@ -295,10 +295,19 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             <div class="tag-chips">
                 
                 
+                <a href="/tags/hexo/" title="hexo: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="hexo" style="background-color: #F9EBEA;">hexo
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/tags/html/" title="html: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="html" style="background-color: #F9EBEA;">html
+                            data-tagname="html" style="background-color: #F5EEF8;">html
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -307,16 +316,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 <a href="/tags/pdf/" title="pdf: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
-                            data-tagname="pdf" style="background-color: #F5EEF8;">pdf
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/hexo/" title="hexo: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="hexo" style="background-color: #D5F5E3;">hexo
+                            data-tagname="pdf" style="background-color: #D5F5E3;">pdf
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -437,6 +437,17 @@ $(function () {
 <script src="/js/matery.js"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143553666-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-143553666-1');
+</script>
 
 
 
