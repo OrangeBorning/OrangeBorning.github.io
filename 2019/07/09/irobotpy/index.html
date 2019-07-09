@@ -4,8 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo:基于nodejs的博客框架, 朱晓鹏">
-    <meta name="description" content="Hexo 是一个基于nodejs的博客框架，快速简洁高效，是他的特点。本文主要是我在安装使用部分的体验，官网 hexo.io 有完整的文档可以使用。相比与2017刚刚接触的时候，体验顺畅了很多。总结起来，为什么又新开了一个博客，又开始使用h">
+    <meta name="keywords" content="iRobotPy, 朱晓鹏">
+    <meta name="description" content="iRobotPy: 企业微信群机器人python
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hexo:基于nodejs的博客框架 | 朱晓鹏</title>
+    <title>iRobotPy | 朱晓鹏</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -260,13 +261,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hexo:基于nodejs的博客框架
+                        iRobotPy
                     </div>
                 </div>
             </div>
@@ -375,25 +376,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/hexo/" target="_blank">
-                                <span class="chip bg-color">hexo</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">No tag</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/hexo/" class="post-category" target="_blank">
-                                hexo
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -401,7 +389,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-07-08
+                    2019-07-09
                 </div>
 
                 
@@ -417,53 +405,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Hexo 是一个基于nodejs的博客框架，快速简洁高效，是他的特点。本文主要是我在安装使用部分的体验，官网 <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">hexo.io</a> 有完整的文档可以使用。相比与2017刚刚接触的时候，体验顺畅了很多。总结起来，为什么又新开了一个博客，又开始使用hexo,主要还是想把从事前端的这三年做一些总结和梳理，使用hexo就是因为他够简单快速。</p>
-<p>这个博客是依托在GitHub上的。目前访问的链接也是gitpage</p>
-<h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><p>git 是软件工程师必备的的技能之一。关于git的介绍这里不在赘述。以下内容基于你有一定的技术能力储备（git、node等）。<br>当你依照官网的步骤在本地运行起 <code>hexo server</code> 也许你看到的是以下内容。对了，我这里都有以mac平台为基础。</p>
-<pre class=" language-bash"><code class="language-bash">~/github/hexoblog » yarn dev                                                                                             zhuxiaopeng@zhuxiaopengdeMacBook-Pro
-yarn run v1.5.1
-warning <span class="token punctuation">..</span>/<span class="token punctuation">..</span>/package.json: No license field
-$ hexo g <span class="token operator">&amp;&amp;</span> hexo server
-INFO  Start processing
-INFO  Files loaded <span class="token keyword">in</span> 274 ms
-INFO  Generated: 2019/07/08/Hexo-基于nodejs的博客框架/index.html
-INFO  Generated: index.html
-INFO  2 files generated <span class="token keyword">in</span> 592 ms
-INFO  Start processing
-INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</span> Press Ctrl+C to stop.</code></pre>
-<p>这里你看到的 <code>yarn dev</code> 是我在package.json中写了以下内容</p>
-<pre class=" language-json"><code class="language-json"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"hexo g &amp;&amp; hexo server"</span><span class="token punctuation">,</span>
-    <span class="token property">"deploy"</span><span class="token operator">:</span> <span class="token string">"hexo clean &amp;&amp; hexo deploy"</span>
-<span class="token punctuation">}</span></code></pre>
-<p>yarn 类似于npm 这里也不展开。你可以使用npm。我注意执行 <code>hexo init</code> 之后，hexo 会使用yarn安装默认的依赖。并在项目目录中生成yarn.lock文件。</p>
-<p>根目录下 _config.yml 是对生成静态文件的一个配置文件。yml 语法可以自行了解。</p>
-<pre class=" language-yml"><code class="language-yml"># URL
-## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://orangeborning.github.io/ # 网址
-root: / # 网站根目录
-permalink: :year/:month/:day/:title/ # 文章的 永久链接 格式
-permalink_defaults: # 永久链接中各部分的默认值    
-
-# Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  repo: https://github.com/OrangeBorning/OrangeBorning.github.io.git #库（Repository）地址
-  branch: master #publ分支名称。如果您使用的是 GitHub 或 GitCafe 的话，程序会尝试自动检测。ished
-  # message: [message] 自定义提交信息 (默认为 Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }})</code></pre>
-<p>这里要注意将 deploy 部分换成你的github仓库地址。URL部分，根目录建议使用默认的。</p>
-<p>使用官网文档可以很顺畅的完成这里的操作。</p>
-<h2 id="Themes"><a href="#Themes" class="headerlink" title="Themes"></a>Themes</h2><p>官方默认给你安装了一个主题，主题在 <code>/themes</code> 下，如果你和我一样不喜欢他的样子，你可以在<a href="https://hexo.io/themes/" target="_blank" rel="noopener">主题市场</a>里找找看有没有喜欢的。当然你也可以自己写一个主题。<br>安装一个新的 theme 你可以在市场找到合适的后，点击你喜欢的主题的名称前往他的 github 地址。在你的项目根目录下运行</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/kinggozhang/hexo-theme-ace.git themes/ace</code></pre>
-<p>这样就会安装你需要的主题。</p>
-<pre class=" language-yml"><code class="language-yml"># Extensions
-## Plugins: https://hexo.io/plugins/
-## Themes: https://hexo.io/themes/
-theme: ace # landscape # 当前主题名称。值为false时禁用主题</code></pre>
-<p>修改配置文件下的 theme 字段内容为你安装到 <code>/themes/</code> 下到目录名</p>
-<p>不同的主题下作者有提供自定义的配置，你可以在主题下找到另一个 <code>_config.yml</code> 这个配置详情看对应主题的文档</p>
-<h2 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h2><p>使用自己的域名需要你首先得有一个域名，具体购买配置可以自行搜索。然后通过CNAME将域名映射到你的gitpage</p>
+                <p><a href="https://github.com/OrangeBorning/iRobotPy" target="_blank" rel="noopener">iRobotPy</a>: 企业微信群机器人python</p>
 
             </div>
             <hr/>
@@ -498,9 +440,9 @@ theme: ace # landscape # 当前主题名称。值为false时禁用主题</code><
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Hexo:基于nodejs的博客框架》
+                    《iRobotPy》
                 </span> by
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/08/hexo-ji-yu-nodejs-de-bo-ke-kuang-jia/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/09/irobotpy/" property="cc:attributionName"
                rel="cc:attributionURL">
                 朱晓鹏
             </a> is licensed under a
@@ -544,20 +486,20 @@ theme: ace # landscape # 当前主题名称。值为false时禁用主题</code><
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2019/07/09/html-zhuan-pdf/">
+                <a href="/2019/07/09/irobotjs/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="HTML转PDF">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="iRobotjs">
                         
-                        <span class="card-title">HTML转PDF</span>
+                        <span class="card-title">iRobotjs</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            因为工作中涉及到了 html 转 pdf的需求，目前接触过的转换方式有 nodejs,java以及通过浏览器唤起系统打印。
-nodejs这里使用到了 pupeteer, 通过无头浏览器提供的api生成pdf，png等。这个方法就目前来说是效
+                            iRobotjs: 企业微信群机器人js
+
                         
                     </div>
                     <div class="publish-info">
@@ -573,66 +515,42 @@ nodejs这里使用到了 pupeteer, 通过无头浏览器提供的api生成pdf，
                     </div>
                 </div>
                 
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/html/" target="_blank">
-                        <span class="chip bg-color">html</span>
-                    </a>
-                    
-                    <a href="/tags/pdf/" target="_blank">
-                        <span class="chip bg-color">pdf</span>
-                    </a>
-                    
-                </div>
-                
             </div>
         </div>
         
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="fa fa-dot-circle-o"></i>
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/07/08/hexo-ji-yu-nodejs-de-bo-ke-kuang-jia/">
+                <a href="/2019/07/09/javascript-bridge/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Hexo:基于nodejs的博客框架">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="javascript-bridge">
                         
-                        <span class="card-title">Hexo:基于nodejs的博客框架</span>
+                        <span class="card-title">javascript-bridge</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Hexo 是一个基于nodejs的博客框架，快速简洁高效，是他的特点。本文主要是我在安装使用部分的体验，官网 hexo.io 有完整的文档可以使用。相比与2017刚刚接触的时候，体验顺畅了很多。总结起来，为什么又新开了一个博客，又开始使用h
+                            javascript-bridge: H5和客户端之间使用到的桥接封装
+
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-08
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-09
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/hexo/" class="post-category" target="_blank">
-                                    hexo
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            朱晓鹏
                             
                         </span>
                     </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/hexo/" target="_blank">
-                        <span class="chip bg-color">hexo</span>
-                    </a>
-                    
                 </div>
                 
             </div>
