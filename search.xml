@@ -11,6 +11,20 @@
         <content type="html"><![CDATA[<p><a href="https://marketplace.visualstudio.com/items?itemName=zhuxiaopeng.utopia-swagger" target="_blank" rel="noopener">utopia-swagger</a>: nodejs swagger helper</p>]]></content>
       
       
+      <categories>
+          
+          <category> vscode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vscode </tag>
+            
+            <tag> swagger </tag>
+            
+        </tags>
       
     </entry>
     
@@ -24,6 +38,26 @@
         <content type="html"><![CDATA[<p><a href="https://github.com/OrangeBorning/iRobotjs" target="_blank" rel="noopener">iRobotjs</a>: 企业微信群机器人js</p>]]></content>
       
       
+      <categories>
+          
+          <category> node </category>
+          
+          <category> js </category>
+          
+          <category> es6 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> node </tag>
+            
+            <tag> js </tag>
+            
+            <tag> es6 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -37,6 +71,18 @@
         <content type="html"><![CDATA[<p><a href="https://github.com/OrangeBorning/iRobotPy" target="_blank" rel="noopener">iRobotPy</a>: 企业微信群机器人python</p>]]></content>
       
       
+      <categories>
+          
+          <category> python3 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python3 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -50,6 +96,20 @@
         <content type="html"><![CDATA[<p><a href="http://zhuxiaopeng.top/jsBridge" target="_blank" rel="noopener">javascript-bridge</a>: H5和客户端之间使用到的桥接封装</p>]]></content>
       
       
+      <categories>
+          
+          <category> js </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+            <tag> vue </tag>
+            
+        </tags>
       
     </entry>
     
