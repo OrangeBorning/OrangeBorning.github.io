@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>HTML转PDF</title>
+      <link href="/2019/07/09/html-zhuan-pdf/"/>
+      <url>/2019/07/09/html-zhuan-pdf/</url>
+      
+        <content type="html"><![CDATA[<p>因为工作中涉及到了 html 转 pdf的需求，目前接触过的转换方式有 nodejs,java以及通过浏览器唤起系统打印。</p><h2 id="nodejs"><a href="#nodejs" class="headerlink" title="nodejs"></a>nodejs</h2><p>这里使用到了 pupeteer, 通过无头浏览器提供的api生成pdf，png等。这个方法就目前来说是效果很好的。相比起接触到到java转，因为对java的实现不了解，这里不做展开。pupeteer 实际上也是浏览器，可以理解为可以运行在服务端的浏览器。</p><h2 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h2><p>通过<code>ctrl + p</code> 或者 <code>command + p</code> 唤起打印，这里可以控制是否展示图片，是否需要页头页脚。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> html </tag>
+            
+            <tag> pdf </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo:基于nodejs的博客框架</title>
       <link href="/2019/07/08/hexo-ji-yu-nodejs-de-bo-ke-kuang-jia/"/>
       <url>/2019/07/08/hexo-ji-yu-nodejs-de-bo-ke-kuang-jia/</url>
