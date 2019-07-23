@@ -4,6 +4,81 @@
   
     
     <entry>
+      <title>Python-100-Days-005</title>
+      <link href="/2019/07/23/python-100-days-005/"/>
+      <url>/2019/07/23/python-100-days-005/</url>
+      
+        <content type="html"><![CDATA[<h2 id="构造程序逻辑"><a href="#构造程序逻辑" class="headerlink" title="构造程序逻辑"></a>构造程序逻辑</h2><p>分支和循环结构会帮助我们将程序中逻辑建立起来，将来我们的程序无论简单复杂，都是由顺序结构、分支结构、循环结构构成的。对于编程语言的初学者来说，首先要锻炼的是将人类自然语言描述的解决问题的步骤和方法翻译成代码的能力，其次就是熟练的运用之前学过的运算符、表达式以及最近的两个章节讲解的分支结构和循环结构的知识。有了这些基本的能力才能够通过计算机程序去解决各种各样的现实问题。所以，开始做练习吧！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python-100-Days </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Python-100-Days-004</title>
+      <link href="/2019/07/23/python-100-days-004/"/>
+      <url>/2019/07/23/python-100-days-004/</url>
+      
+        <content type="html"><![CDATA[<h2 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h2><p>区别于顺序结构，循环结构也是一段特殊的代码块</p><h3 id="for-in"><a href="#for-in" class="headerlink" title="for-in"></a>for-in</h3><p>如果明确的知道循环执行的次数或者要对一个容器进行迭代（后面会讲到），那么我们推荐使用for-in循环</p><h3 id="while"><a href="#while" class="headerlink" title="while"></a>while</h3><p>如果要构造不知道具体循环次数的循环结构，我们推荐使用while循环。while循环通过一个能够产生或转换出bool值的表达式来控制循环，表达式的值为True循环继续，表达式的值为False循环结束。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python-100-Days </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Python-100-Days-003</title>
+      <link href="/2019/07/23/python-100-days-003/"/>
+      <url>/2019/07/23/python-100-days-003/</url>
+      
+        <content type="html"><![CDATA[<h2 id="分支结构（选择结构）"><a href="#分支结构（选择结构）" class="headerlink" title="分支结构（选择结构）"></a>分支结构（选择结构）</h2><p>区别于顺序结构逐行执行。</p><h3 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h3><p>与 js 不同的是Python 没有花括号 <code>{}</code> 去包裹代码片段 <code>if elif else</code> 但是会多个 <code>:</code>。</p><pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">"""分段函数求值        3x - 5  (x > 1)f(x) =  x + 2   (-1 &lt;= x &lt;= 1)        5x + 3  (x &lt; -1)Version: 0.1Author: 骆昊"""</span>x <span class="token operator">=</span> float<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">'x = '</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token keyword">if</span> x <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">:</span>    y <span class="token operator">=</span> <span class="token number">3</span> <span class="token operator">*</span> x <span class="token operator">-</span> <span class="token number">5</span><span class="token keyword">elif</span> x <span class="token operator">>=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span>    y <span class="token operator">=</span> x <span class="token operator">+</span> <span class="token number">2</span><span class="token keyword">else</span><span class="token punctuation">:</span>    y <span class="token operator">=</span> <span class="token number">5</span> <span class="token operator">*</span> x <span class="token operator">+</span> <span class="token number">3</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'f(%.2f) = %.2f'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre><p>关于嵌套的分支结构 <strong><em>Flat is better than nested.</em></strong> 提倡代码“扁平化”是因为嵌套结构的嵌套层次多了之后会严重的影响代码的可读性</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python-100-Days </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Python-100-Days-002</title>
       <link href="/2019/07/22/python-100-days-002/"/>
       <url>/2019/07/22/python-100-days-002/</url>
@@ -120,9 +195,9 @@
       
         <tags>
             
-            <tag> node </tag>
-            
             <tag> js </tag>
+            
+            <tag> node </tag>
             
             <tag> es6 </tag>
             
