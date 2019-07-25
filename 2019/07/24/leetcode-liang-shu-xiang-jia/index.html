@@ -4,9 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="iRobotjs, 朱晓鹏">
-    <meta name="description" content="iRobotjs: 企业微信群机器人js
-">
+    <meta name="keywords" content="leetcode-两数相加, 朱晓鹏">
+    <meta name="description" content="两数相加给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。
+如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。
+您可以假设除了数字 0 之外">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>iRobotjs | 朱晓鹏</title>
+    <title>leetcode-两数相加 | 朱晓鹏</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -243,13 +244,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        iRobotjs
+                        leetcode-两数相加
                     </div>
                 </div>
             </div>
@@ -360,16 +361,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/js/" target="_blank">
-                                <span class="chip bg-color">js</span>
+                            <a href="/tags/leetcode/" target="_blank">
+                                <span class="chip bg-color">leetcode</span>
                             </a>
                         
-                            <a href="/tags/node/" target="_blank">
-                                <span class="chip bg-color">node</span>
+                            <a href="/tags/python/" target="_blank">
+                                <span class="chip bg-color">python</span>
                             </a>
                         
-                            <a href="/tags/es6/" target="_blank">
-                                <span class="chip bg-color">es6</span>
+                            <a href="/tags/javascript/" target="_blank">
+                                <span class="chip bg-color">javascript</span>
                             </a>
                         
                     </div>
@@ -380,16 +381,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/node/" class="post-category" target="_blank">
-                                node
-                            </a>
-                        
-                            <a href="/categories/node/js/" class="post-category" target="_blank">
-                                js
-                            </a>
-                        
-                            <a href="/categories/node/js/es6/" class="post-category" target="_blank">
-                                es6
+                            <a href="/categories/leetcode/" class="post-category" target="_blank">
+                                leetcode
                             </a>
                         
                     </div>
@@ -400,7 +393,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-07-09
+                    2019-07-24
                 </div>
 
                 
@@ -416,7 +409,59 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a href="https://github.com/OrangeBorning/iRobotjs" target="_blank" rel="noopener">iRobotjs</a>: 企业微信群机器人js</p>
+                <h2 id="两数相加"><a href="#两数相加" class="headerlink" title="两数相加"></a>两数相加</h2><p>给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。</p>
+<p>如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。</p>
+<p>您可以假设除了数字 0 之外，这两个数都不会以 0 开头。</p>
+<p>示例：<br>    输入：(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>    输出：7 -&gt; 0 -&gt; 8<br>    原因：342 + 465 = 807</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */</span>
+<span class="token comment" spellcheck="true">/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */</span>
+<span class="token keyword">var</span> addTwoNumbers <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>l1<span class="token punctuation">,</span> l2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    a1 <span class="token operator">=</span> <span class="token function">listNode2Array</span><span class="token punctuation">(</span>l1<span class="token punctuation">)</span>
+    a2 <span class="token operator">=</span> <span class="token function">listNode2Array</span><span class="token punctuation">(</span>l2<span class="token punctuation">)</span>
+    <span class="token keyword">var</span> aa <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>a1<span class="token punctuation">.</span>length <span class="token operator">&lt;</span> a2<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        aa <span class="token operator">=</span> a1
+        a1 <span class="token operator">=</span> a2
+        a2 <span class="token operator">=</span> aa
+    <span class="token punctuation">}</span>
+    <span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    a1<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
+        arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token punctuation">(</span>a2<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    arr<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">></span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">{</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token operator">%</span><span class="token number">10</span><span class="token punctuation">;</span> arr<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">?</span> arr<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span><span class="token number">1</span> <span class="token punctuation">:</span> arr<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token function">array2ListNode</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 链表转数组</span>
+<span class="token keyword">function</span> <span class="token function">listNode2Array</span><span class="token punctuation">(</span>ListNode<span class="token punctuation">,</span>val<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">var</span> arr <span class="token operator">=</span> val <span class="token operator">&amp;&amp;</span> val<span class="token punctuation">.</span>length <span class="token operator">?</span> val <span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>ListNode<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>ListNode<span class="token punctuation">.</span>next<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">listNode2Array</span><span class="token punctuation">(</span>ListNode<span class="token punctuation">.</span>next<span class="token punctuation">,</span>arr<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> 
+  <span class="token keyword">return</span> arr
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// 数组转链表</span>
+<span class="token keyword">function</span> <span class="token function">array2ListNode</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">var</span> line <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>   
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;=</span> line<span class="token punctuation">.</span>length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    line<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>line<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>next <span class="token operator">=</span> line<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> line<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code></pre>
 
             </div>
             <hr/>
@@ -451,9 +496,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《iRobotjs》
+                    《leetcode-两数相加》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/09/irobotjs/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/24/leetcode-liang-shu-xiang-jia/" property="cc:attributionName"
                rel="cc:attributionURL">
                 朱晓鹏
             </a> 采用
@@ -493,51 +538,58 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/07/09/utopia-swagger/">
+                <a href="/2019/07/24/leetcode-liang-shu-xiang-jia/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="utopia-swagger">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="leetcode-两数相加">
                         
-                        <span class="card-title">utopia-swagger</span>
+                        <span class="card-title">leetcode-两数相加</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            utopia-swagger: nodejs swagger helper
-
+                            两数相加给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。
+如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。
+您可以假设除了数字 0 之外
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/vscode/" class="post-category" target="_blank">
-                                    vscode
+                            <a href="/categories/leetcode/" class="post-category" target="_blank">
+                                    leetcode
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vscode/" target="_blank">
-                        <span class="chip bg-color">vscode</span>
+                    <a href="/tags/leetcode/" target="_blank">
+                        <span class="chip bg-color">leetcode</span>
                     </a>
                     
-                    <a href="/tags/swagger/" target="_blank">
-                        <span class="chip bg-color">swagger</span>
+                    <a href="/tags/python/" target="_blank">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/javascript/" target="_blank">
+                        <span class="chip bg-color">javascript</span>
                     </a>
                     
                 </div>
@@ -551,32 +603,34 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/07/09/irobotpy/">
+                <a href="/2019/07/24/leetcode-liang-shu-zhi-he/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="iRobotPy">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="leetcode-两数之和">
                         
-                        <span class="card-title">iRobotPy</span>
+                        <span class="card-title">leetcode-两数之和</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            iRobotPy: 企业微信群机器人python
-
+                            时间复杂度?空间复杂度?
+两数之和给定一个整数数组 nums  和一个目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回他们的数组下标。
+你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。
+示
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-09
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-24
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python3/" class="post-category" target="_blank">
-                                    python3
+                            <a href="/categories/leetcode/" class="post-category" target="_blank">
+                                    leetcode
                                 </a>
                             
                             
@@ -586,8 +640,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python3/" target="_blank">
-                        <span class="chip bg-color">python3</span>
+                    <a href="/tags/leetcode/" target="_blank">
+                        <span class="chip bg-color">leetcode</span>
+                    </a>
+                    
+                    <a href="/tags/python/" target="_blank">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/javascript/" target="_blank">
+                        <span class="chip bg-color">javascript</span>
                     </a>
                     
                 </div>
