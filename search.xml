@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>leetcode-最长公共前缀</title>
+      <link href="/2019/07/26/leetcode-zui-chang-gong-gong-qian-zhui/"/>
+      <url>/2019/07/26/leetcode-zui-chang-gong-gong-qian-zhui/</url>
+      
+        <content type="html"><![CDATA[<p>编写一个函数来查找字符串数组中的最长公共前缀。</p><p>如果不存在公共前缀，返回空字符串 <code>&quot;&quot;</code>。</p><p>示例 1:</p><pre><code>输入: [&quot;flower&quot;,&quot;flow&quot;,&quot;flight&quot;]输出: &quot;fl&quot;</code></pre><p>示例 2:</p><pre><code>输入: [&quot;dog&quot;,&quot;racecar&quot;,&quot;car&quot;]输出: &quot;&quot;解释: 输入不存在公共前缀。</code></pre><p>说明:</p><p>所有输入只包含小写字母 <code>a-z</code></p><p>思路：</p><pre><code>正则排除输入非 `a-z` 的情况。对输入排序减少首项长度。不确定循环次数，这里选择了while循环。</code></pre><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/** * @param {string[]} strs * @return {string} */</span><span class="token keyword">var</span> longestCommonPrefix <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>strs<span class="token punctuation">)</span> <span class="token punctuation">{</span>  strs<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token keyword">if</span><span class="token punctuation">(</span>strs<span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span>j<span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token operator">!</span><span class="token regex">/^[a-z]+$/</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token operator">!</span>strs<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">{</span>      <span class="token keyword">return</span> <span class="token string">""</span>  <span class="token punctuation">}</span>  <span class="token keyword">if</span><span class="token punctuation">(</span>strs<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>      <span class="token keyword">return</span> strs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>  <span class="token punctuation">}</span>  <span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">1</span>  <span class="token keyword">var</span> str <span class="token operator">=</span> strs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> strs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token string">""</span>  <span class="token keyword">while</span> <span class="token punctuation">(</span>strs<span class="token punctuation">.</span><span class="token function">every</span><span class="token punctuation">(</span>j<span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span><span class="token keyword">return</span> j<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>      <span class="token keyword">if</span><span class="token punctuation">(</span>str <span class="token operator">==</span> strs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>str <span class="token operator">+</span><span class="token operator">=</span><span class="token string">"a"</span><span class="token punctuation">;</span><span class="token keyword">break</span><span class="token punctuation">}</span>      i<span class="token operator">++</span>      str <span class="token operator">=</span> strs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span>  <span class="token punctuation">}</span>  <span class="token keyword">var</span> res <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>  res<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> leetcode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>leetcode-罗马数字转整数</title>
       <link href="/2019/07/26/leetcode-luo-ma-shu-zi-zhuan-zheng-shu/"/>
       <url>/2019/07/26/leetcode-luo-ma-shu-zi-zhuan-zheng-shu/</url>
