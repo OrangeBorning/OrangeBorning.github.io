@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>leetcode-删除排序数组中的重复项</title>
+      <link href="/2019/07/26/leetcode-shan-chu-pai-xu-shu-zu-zhong-de-chong-fu-xiang/"/>
+      <url>/2019/07/26/leetcode-shan-chu-pai-xu-shu-zu-zhong-de-chong-fu-xiang/</url>
+      
+        <content type="html"><![CDATA[<h2 id="删除排序数组中的重复项"><a href="#删除排序数组中的重复项" class="headerlink" title="删除排序数组中的重复项"></a>删除排序数组中的重复项</h2><p>给定一个排序数组，你需要在<a href="https://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">原地</a>删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。</p><p>不要使用额外的数组空间，你必须在<a href="https://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">原地</a><strong>修改输入数组</strong>并在使用 O(1) 额外空间的条件下完成。</p><p>示例 1:</p><pre><code>给定数组 nums = [1,1,2], 函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。 你不需要考虑数组中超出新长度后面的元素。</code></pre><p>示例 2:</p><pre><code>给定 nums = [0,0,1,1,1,2,2,3,3,4],函数应该返回新的长度 5, 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4。你不需要考虑数组中超出新长度后面的元素。</code></pre><p>说明:</p><p>为什么返回数值是整数，但输出的答案是数组呢?</p><p>请注意，输入数组是以“引用”方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。</p><p>你可以想象内部操作如下:</p><pre><code>// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝int len = removeDuplicates(nums);// 在函数里修改输入数组对于调用者是可见的。// 根据你的函数返回的长度, 它会打印出数组中该长度范围内的所有元素。for (int i = 0; i &lt; len; i++) {    print(nums[i]);}</code></pre><p>思路：<br>    不适用额外的数组空间？那就用set吧</p><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/** * @param {number[]} nums * @return {number} */</span><span class="token keyword">var</span> removeDuplicates <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token keyword">var</span> <span class="token keyword">set</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span>    nums<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>nums<span class="token punctuation">.</span>length<span class="token punctuation">)</span>    <span class="token keyword">set</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>nums<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> leetcode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>leetcode-合并两个有序链表</title>
       <link href="/2019/07/26/leetcode-he-bing-liang-ge-you-xu-lian-biao/"/>
       <url>/2019/07/26/leetcode-he-bing-liang-ge-you-xu-lian-biao/</url>
@@ -384,9 +411,9 @@
       
         <tags>
             
-            <tag> js </tag>
-            
             <tag> node </tag>
+            
+            <tag> js </tag>
             
             <tag> es6 </tag>
             

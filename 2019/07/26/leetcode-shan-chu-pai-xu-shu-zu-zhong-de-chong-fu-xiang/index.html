@@ -4,11 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="leetcode-合并两个有序链表, 朱晓鹏">
-    <meta name="description" content="合并两个有序链表将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 
-示例：
-输入：1-&amp;gt;2-&amp;gt;4, 1-&amp;gt;3-&amp;gt;4
-输出：1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;4">
+    <meta name="keywords" content="leetcode-删除排序数组中的重复项, 朱晓鹏">
+    <meta name="description" content="删除排序数组中的重复项给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。
+不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。
+示例 1:
+给定数组 nu">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>leetcode-合并两个有序链表 | 朱晓鹏</title>
+    <title>leetcode-删除排序数组中的重复项 | 朱晓鹏</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -245,13 +245,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        leetcode-合并两个有序链表
+                        leetcode-删除排序数组中的重复项
                     </div>
                 </div>
             </div>
@@ -406,56 +406,39 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="合并两个有序链表"><a href="#合并两个有序链表" class="headerlink" title="合并两个有序链表"></a>合并两个有序链表</h2><p>将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 </p>
-<p>示例：</p>
-<pre><code>输入：1-&gt;2-&gt;4, 1-&gt;3-&gt;4
-输出：1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4</code></pre><p>思路：<br>    链表转数组排序后再转链表返回</p>
+                <h2 id="删除排序数组中的重复项"><a href="#删除排序数组中的重复项" class="headerlink" title="删除排序数组中的重复项"></a>删除排序数组中的重复项</h2><p>给定一个排序数组，你需要在<a href="https://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">原地</a>删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。</p>
+<p>不要使用额外的数组空间，你必须在<a href="https://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">原地</a><strong>修改输入数组</strong>并在使用 O(1) 额外空间的条件下完成。</p>
+<p>示例 1:</p>
+<pre><code>给定数组 nums = [1,1,2], 
+
+函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。 
+
+你不需要考虑数组中超出新长度后面的元素。</code></pre><p>示例 2:</p>
+<pre><code>给定 nums = [0,0,1,1,1,2,2,3,3,4],
+
+函数应该返回新的长度 5, 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4。
+
+你不需要考虑数组中超出新长度后面的元素。</code></pre><p>说明:</p>
+<p>为什么返回数值是整数，但输出的答案是数组呢?</p>
+<p>请注意，输入数组是以“引用”方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。</p>
+<p>你可以想象内部操作如下:</p>
+<pre><code>// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝
+int len = removeDuplicates(nums);
+
+// 在函数里修改输入数组对于调用者是可见的。
+// 根据你的函数返回的长度, 它会打印出数组中该长度范围内的所有元素。
+for (int i = 0; i &lt; len; i++) {
+    print(nums[i]);
+}</code></pre><p>思路：<br>    不适用额外的数组空间？那就用set吧</p>
 <pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
+ * @param {number[]} nums
+ * @return {number}
  */</span>
-<span class="token comment" spellcheck="true">/**
- * @param {ListNode} l1
- * @param {ListNode} l2
- * @return {ListNode}
- */</span>
-<span class="token keyword">var</span> mergeTwoLists <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>l1<span class="token punctuation">,</span> l2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>l1<span class="token punctuation">,</span>l2<span class="token punctuation">)</span>
-    <span class="token keyword">var</span> a1 <span class="token operator">=</span> <span class="token function">listNode2Array</span><span class="token punctuation">(</span>l1<span class="token punctuation">)</span>
-    <span class="token keyword">var</span> a2 <span class="token operator">=</span> <span class="token function">listNode2Array</span><span class="token punctuation">(</span>l2<span class="token punctuation">)</span>
-    <span class="token keyword">var</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>a1<span class="token punctuation">,</span>a2<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span><span class="token keyword">return</span> a <span class="token operator">-</span>b<span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> <span class="token function">array2ListNode</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token comment" spellcheck="true">// 链表转数组</span>
-<span class="token keyword">function</span> <span class="token function">listNode2Array</span><span class="token punctuation">(</span>ListNode<span class="token punctuation">,</span>val<span class="token punctuation">)</span><span class="token punctuation">{</span>
-  <span class="token keyword">var</span> arr <span class="token operator">=</span> val <span class="token operator">&amp;&amp;</span> val<span class="token punctuation">.</span>length <span class="token operator">?</span> val <span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-  <span class="token keyword">if</span><span class="token punctuation">(</span>ListNode<span class="token punctuation">)</span><span class="token punctuation">{</span>
-      arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>ListNode<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span>ListNode<span class="token punctuation">.</span>next<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token function">listNode2Array</span><span class="token punctuation">(</span>ListNode<span class="token punctuation">.</span>next<span class="token punctuation">,</span>arr<span class="token punctuation">)</span>
-      <span class="token punctuation">}</span> 
-  <span class="token punctuation">}</span>
-  <span class="token keyword">return</span> arr
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">// 数组转链表</span>
-<span class="token keyword">function</span> <span class="token function">array2ListNode</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">{</span>
-  <span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">var</span> line <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>   
-      <span class="token punctuation">}</span><span class="token punctuation">)</span>
-      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;=</span> line<span class="token punctuation">.</span>length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        line<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>line<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>next <span class="token operator">=</span> line<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-      <span class="token punctuation">}</span>
-      <span class="token keyword">return</span> line<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-      <span class="token keyword">return</span> <span class="token keyword">null</span>
-  <span class="token punctuation">}</span>
-
-<span class="token punctuation">}</span></code></pre>
+<span class="token keyword">var</span> removeDuplicates <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> <span class="token keyword">set</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
+    nums<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>nums<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
+    <span class="token keyword">set</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>nums<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 
             </div>
             <hr/>
@@ -490,9 +473,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《leetcode-合并两个有序链表》
+                    《leetcode-删除排序数组中的重复项》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/26/leetcode-he-bing-liang-ge-you-xu-lian-biao/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/26/leetcode-shan-chu-pai-xu-shu-zu-zhong-de-chong-fu-xiang/" property="cc:attributionName"
                rel="cc:attributionURL">
                 朱晓鹏
             </a> 采用
@@ -532,9 +515,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/07/26/leetcode-shan-chu-pai-xu-shu-zu-zhong-de-chong-fu-xiang/">
                     <div class="card-image">
@@ -555,9 +539,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-26
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -570,6 +554,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -592,22 +577,22 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/07/26/leetcode-you-xiao-de-gua-hao/">
+                <a href="/2019/07/26/leetcode-he-bing-liang-ge-you-xu-lian-biao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="leetcode-有效的括号">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="leetcode-合并两个有序链表">
                         
-                        <span class="card-title">leetcode-有效的括号</span>
+                        <span class="card-title">leetcode-合并两个有序链表</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            有效的括号给定一个只包括 &#39;(&#39;，&#39;)&#39;，&#39;{&#39;，&#39;}&#39;，&#39;[&#39;，&#39;]&#39; 的字符串，判断字符串是否有效。
-有效字符串需满足：
-
-左括号必须用相同
+                            合并两个有序链表将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 
+示例：
+输入：1-&gt;2-&gt;4, 1-&gt;3-&gt;4
+输出：1-&gt;1-&gt;2-&gt;3-&gt;4
                         
                     </div>
                     <div class="publish-info">
