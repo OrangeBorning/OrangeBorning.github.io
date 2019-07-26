@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>leetcode-合并两个有序链表</title>
+      <link href="/2019/07/26/leetcode-he-bing-liang-ge-you-xu-lian-biao/"/>
+      <url>/2019/07/26/leetcode-he-bing-liang-ge-you-xu-lian-biao/</url>
+      
+        <content type="html"><![CDATA[<h2 id="合并两个有序链表"><a href="#合并两个有序链表" class="headerlink" title="合并两个有序链表"></a>合并两个有序链表</h2><p>将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 </p><p>示例：</p><pre><code>输入：1-&gt;2-&gt;4, 1-&gt;3-&gt;4输出：1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4</code></pre><p>思路：<br>    链表转数组排序后再转链表返回</p><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/** * Definition for singly-linked list. * function ListNode(val) { *     this.val = val; *     this.next = null; * } */</span><span class="token comment" spellcheck="true">/** * @param {ListNode} l1 * @param {ListNode} l2 * @return {ListNode} */</span><span class="token keyword">var</span> mergeTwoLists <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>l1<span class="token punctuation">,</span> l2<span class="token punctuation">)</span> <span class="token punctuation">{</span>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>l1<span class="token punctuation">,</span>l2<span class="token punctuation">)</span>    <span class="token keyword">var</span> a1 <span class="token operator">=</span> <span class="token function">listNode2Array</span><span class="token punctuation">(</span>l1<span class="token punctuation">)</span>    <span class="token keyword">var</span> a2 <span class="token operator">=</span> <span class="token function">listNode2Array</span><span class="token punctuation">(</span>l2<span class="token punctuation">)</span>    <span class="token keyword">var</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>a1<span class="token punctuation">,</span>a2<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span><span class="token keyword">return</span> a <span class="token operator">-</span>b<span class="token punctuation">}</span><span class="token punctuation">)</span>    <span class="token keyword">return</span> <span class="token function">array2ListNode</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// 链表转数组</span><span class="token keyword">function</span> <span class="token function">listNode2Array</span><span class="token punctuation">(</span>ListNode<span class="token punctuation">,</span>val<span class="token punctuation">)</span><span class="token punctuation">{</span>  <span class="token keyword">var</span> arr <span class="token operator">=</span> val <span class="token operator">&amp;&amp;</span> val<span class="token punctuation">.</span>length <span class="token operator">?</span> val <span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>  <span class="token keyword">if</span><span class="token punctuation">(</span>ListNode<span class="token punctuation">)</span><span class="token punctuation">{</span>      arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>ListNode<span class="token punctuation">.</span>val<span class="token punctuation">)</span>      <span class="token keyword">if</span> <span class="token punctuation">(</span>ListNode<span class="token punctuation">.</span>next<span class="token punctuation">)</span><span class="token punctuation">{</span>        <span class="token keyword">return</span> <span class="token function">listNode2Array</span><span class="token punctuation">(</span>ListNode<span class="token punctuation">.</span>next<span class="token punctuation">,</span>arr<span class="token punctuation">)</span>      <span class="token punctuation">}</span>   <span class="token punctuation">}</span>  <span class="token keyword">return</span> arr<span class="token punctuation">}</span><span class="token comment" spellcheck="true">// 数组转链表</span><span class="token keyword">function</span> <span class="token function">array2ListNode</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">{</span>  <span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>      <span class="token keyword">var</span> line <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>         <span class="token punctuation">}</span><span class="token punctuation">)</span>      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;=</span> line<span class="token punctuation">.</span>length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>        line<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>line<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>next <span class="token operator">=</span> line<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>      <span class="token punctuation">}</span>      <span class="token keyword">return</span> line<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>      <span class="token keyword">return</span> <span class="token keyword">null</span>  <span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> leetcode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>leetcode-有效的括号</title>
       <link href="/2019/07/26/leetcode-you-xiao-de-gua-hao/"/>
       <url>/2019/07/26/leetcode-you-xiao-de-gua-hao/</url>
@@ -357,9 +384,9 @@
       
         <tags>
             
-            <tag> node </tag>
-            
             <tag> js </tag>
+            
+            <tag> node </tag>
             
             <tag> es6 </tag>
             
