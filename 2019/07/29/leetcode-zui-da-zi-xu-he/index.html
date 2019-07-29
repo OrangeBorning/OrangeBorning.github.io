@@ -4,13 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="leetcode-报数, 朱晓鹏">
-    <meta name="description" content="报数报数序列是一个整数序列，按照其中的整数的顺序进行报数，得到下一个数。其前五项如下：
-1.     1
-2.     11
-3.     21
-4.     1211
-5.     1112211 被读作  &amp;quot;one 1&amp;quo">
+    <meta name="keywords" content="leetcode-最大子序和, 朱晓鹏">
+    <meta name="description" content="最大子序和给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
+示例:
+输入: [-2,1,-3,4,-1,2,1,-5,4],
+输出: 6
+解释: 连续子数组 [4,-1,2,1] 的和最">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>leetcode-报数 | 朱晓鹏</title>
+    <title>leetcode-最大子序和 | 朱晓鹏</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -247,13 +246,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        leetcode-报数
+                        leetcode-最大子序和
                     </div>
                 </div>
             </div>
@@ -408,52 +407,32 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="报数"><a href="#报数" class="headerlink" title="报数"></a>报数</h2><p>报数序列是一个整数序列，按照其中的整数的顺序进行报数，得到下一个数。其前五项如下：</p>
-<pre><code>1.     1
-2.     11
-3.     21
-4.     1211
-5.     111221</code></pre><p><code>1</code> 被读作  <code>&quot;one 1&quot;</code>  (<code>&quot;一个一&quot;</code>) , 即 <code>11</code>。<br><code>11</code> 被读作 <code>&quot;two 1s&quot;</code> (<code>&quot;两个一&quot;</code>）, 即 <code>21</code>。<br><code>21</code> 被读作 <code>&quot;one 2&quot;</code>,  <code>&quot;one 1&quot;</code> （<code>&quot;一个二&quot;</code> ,  <code>&quot;一个一&quot;</code>) , 即 <code>1211</code>。</p>
-<p>给定一个正整数 n（1 ≤ n ≤ 30），输出报数序列的第 n 项。</p>
-<p>注意：整数顺序将表示为一个字符串。</p>
-<p>示例 1:</p>
-<pre><code>输入: 1
-输出: &quot;1&quot;</code></pre><p>示例 2:</p>
-<pre><code>输入: 4
-输出: &quot;1211&quot;</code></pre><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/**
- * @param {number} n
- * @return {string}
+                <h2 id="最大子序和"><a href="#最大子序和" class="headerlink" title="最大子序和"></a>最大子序和</h2><p>给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
+<p>示例:</p>
+<pre><code>输入: [-2,1,-3,4,-1,2,1,-5,4],
+输出: 6
+解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。</code></pre><p>进阶:</p>
+<p>如果你已经实现复杂度为 O(n) 的解法，尝试使用更为精妙的分治法求解。</p>
+<p>这题我没想到思路直接看的别人的题解</p>
+<p>思路<br>    这道题用动态规划的思路并不难解决，比较难的是后文提出的用分治法求解，但由于其不是最优解法，所以先不列出来<br>    动态规划的是首先对数组进行遍历，当前最大连续子序列和为 sum，结果为 ans<br>    如果 sum &gt; 0，则说明 sum 对结果有增益效果，则 sum 保留并加上当前遍历数字<br>    如果 sum &lt;= 0，则说明 sum 对结果无增益效果，需要舍弃，则 sum 直接更新为当前遍历数字<br>    每次比较 sum 和 ans的大小，将最大值置为ans，遍历结束返回结果<br>    时间复杂度：O(n)O(n)</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/**
+ * @param {number[]} nums
+ * @return {number}
  */</span>
-<span class="token keyword">var</span> countAndSay <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span> n <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token string">'1'</span><span class="token punctuation">}</span>
-    <span class="token keyword">var</span> say <span class="token operator">=</span> <span class="token string">'1'</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        say <span class="token operator">=</span> <span class="token function">create</span><span class="token punctuation">(</span>say<span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> say
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token keyword">function</span> <span class="token function">create</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">var</span> a <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
-    <span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>str<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
-    <span class="token keyword">var</span> j <span class="token operator">=</span> <span class="token number">0</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span> str<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> str<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
-            arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>str<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> maxSubArray <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> ans <span class="token operator">=</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">const</span> num <span class="token keyword">of</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>sum <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            sum <span class="token operator">+</span><span class="token operator">=</span> num<span class="token punctuation">;</span>
         <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">[</span>str<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-            j<span class="token operator">++</span>
+            sum <span class="token operator">=</span> num<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
+        ans <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>ans<span class="token punctuation">,</span> sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> arr<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
-      <span class="token keyword">return</span> <span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>i<span class="token punctuation">.</span>length<span class="token interpolation-punctuation punctuation">}</span></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>i<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span> 
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span></code></pre>
-<pre><code>这种饶舌题目是出给嘻哈程序员的吗？
+    <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 
-看见你们也看不懂题目。我就放心了
-
-题目的意思是对序列前一个数进行报数，数列第一项不是1吗，那第二项就报第一项的有1个1，输出11，然后第三项就在第二项的基础上报数，第二项是11，第三项不就是2个1么，然后输出21。。。</code></pre>
             </div>
             <hr/>
 
@@ -487,9 +466,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《leetcode-报数》
+                    《leetcode-最大子序和》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/29/leetcode-bao-shu/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/29/leetcode-zui-da-zi-xu-he/" property="cc:attributionName"
                rel="cc:attributionURL">
                 朱晓鹏
             </a> 采用
@@ -529,9 +508,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/07/29/leetcode-zui-da-zi-xu-he/">
                     <div class="card-image">
@@ -553,9 +533,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -568,6 +548,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -590,29 +571,29 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/07/27/leetcode-sou-suo-cha-ru-de-wei-zhi/">
+                <a href="/2019/07/29/leetcode-bao-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="leetcode-搜索插入的位置">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="leetcode-报数">
                         
-                        <span class="card-title">leetcode-搜索插入的位置</span>
+                        <span class="card-title">leetcode-报数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            搜索插入的位置给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
-你可以假设数组中无重复元素。
-示例 1:
-输入: [1,3,5,6], 5
-输出: 2示例 2:
-输入:
+                            报数报数序列是一个整数序列，按照其中的整数的顺序进行报数，得到下一个数。其前五项如下：
+1.     1
+2.     11
+3.     21
+4.     1211
+5.     1112211 被读作  &quot;one 1&quo
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-26
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-29
                             </span>
                         <span class="publish-author">
                             
