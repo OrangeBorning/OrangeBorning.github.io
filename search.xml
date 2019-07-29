@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>leetcode-加一</title>
+      <link href="/2019/07/29/leetcode-jia-yi/"/>
+      <url>/2019/07/29/leetcode-jia-yi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="加一"><a href="#加一" class="headerlink" title="加一"></a>加一</h2><p>给定一个由整数组成的非空数组所表示的非负整数，在该数的基础上加一。</p><p>最高位数字存放在数组的首位， 数组中每个元素只存储一个数字。</p><p>你可以假设除了整数 0 之外，这个整数不会以零开头。</p><p>示例 1:</p><pre><code>输入: [1,2,3]输出: [1,2,4]解释: 输入数组表示数字 123。</code></pre><p>示例 2:</p><pre><code>输入: [4,3,2,1]输出: [4,3,2,2]解释: 输入数组表示数字 4321。</code></pre><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/** * @param {number[]} digits * @return {number[]} */</span><span class="token keyword">var</span> plusOne <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>digits<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span>digits<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">1</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre><p>当输入为 <code>[6,1,4,5,3,9,0,1,9,5,1,8,6,7,0,5,5,4,3]</code> 返回了 <code>[6,1,4,5,3,9,0,1,9,5,1,8,6,7,0,5,0,0,0]</code></p><p>这是因为js存在一个算术运算的上限，那就改成遍历了</p><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/** * @param {number[]} digits * @return {number[]} */</span><span class="token keyword">var</span> plusOne <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>digits<span class="token punctuation">)</span> <span class="token punctuation">{</span>    digits<span class="token punctuation">[</span>digits<span class="token punctuation">.</span>length <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span>    <span class="token keyword">if</span><span class="token punctuation">(</span>digits<span class="token punctuation">[</span>digits<span class="token punctuation">.</span>length <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> <span class="token number">9</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">return</span> digits    <span class="token punctuation">}</span>    <span class="token keyword">var</span> arr <span class="token operator">=</span> digits<span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>        <span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">></span><span class="token number">9</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>            arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">%</span><span class="token operator">=</span> <span class="token number">10</span>            arr<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">?</span> arr<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">:</span> arr<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>            <span class="token keyword">return</span> arr<span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>        <span class="token punctuation">}</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> leetcode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>leetcode-最后一个单词的长度</title>
       <link href="/2019/07/29/leetcode-zui-hou-yi-ge-dan-ci-de-chang-du/"/>
       <url>/2019/07/29/leetcode-zui-hou-yi-ge-dan-ci-de-chang-du/</url>
