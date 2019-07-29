@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>leetcode-最后一个单词的长度</title>
+      <link href="/2019/07/29/leetcode-zui-hou-yi-ge-dan-ci-de-chang-du/"/>
+      <url>/2019/07/29/leetcode-zui-hou-yi-ge-dan-ci-de-chang-du/</url>
+      
+        <content type="html"><![CDATA[<p>给定一个仅包含大小写字母和空格 ‘ ‘ 的字符串，返回其最后一个单词的长度。</p><p>如果不存在最后一个单词，请返回 0 。</p><p>说明：一个单词是指由字母组成，但不包含任何空格的字符串。</p><p>示例:</p><p>输入: “Hello World”<br>输出: 5</p><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/** * @param {string} s * @return {number} */</span><span class="token keyword">var</span> lengthOfLastWord <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token keyword">return</span> s<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> leetcode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>leetcode-最大子序和</title>
       <link href="/2019/07/29/leetcode-zui-da-zi-xu-he/"/>
       <url>/2019/07/29/leetcode-zui-da-zi-xu-he/</url>
