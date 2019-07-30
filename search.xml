@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>leetcode-IP 地址无效化</title>
+      <link href="/2019/07/31/leetcode-ip-di-zhi-wu-xiao-hua/"/>
+      <url>/2019/07/31/leetcode-ip-di-zhi-wu-xiao-hua/</url>
+      
+        <content type="html"><![CDATA[<h2 id="地址无效化"><a href="#地址无效化" class="headerlink" title="地址无效化"></a>地址无效化</h2><p>给你一个有效的 <code>IPv4</code> 地址 <code>address</code>，返回这个 IP 地址的无效化版本。</p><p>所谓无效化 IP 地址，其实就是用 <code>&quot;[.]&quot;</code> 代替了每个 <code>&quot;.&quot;</code>。</p><p>示例 1：</p><pre><code>输入：address = &quot;1.1.1.1&quot;输出：&quot;1[.]1[.]1[.]1&quot;</code></pre><p>示例 2：</p><pre><code>输入：address = &quot;255.100.50.0&quot;输出：&quot;255[.]100[.]50[.]0&quot;</code></pre><p>提示：</p><ul><li>给出的 <code>address</code> 是一个有效的 IPv4 地址   </li></ul><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/** * @param {string} address * @return {string} */</span><span class="token keyword">var</span> defangIPaddr <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>address<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token keyword">return</span> address<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'.'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'[.]'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> leetcode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>leetcode-数组的相对排序</title>
       <link href="/2019/07/31/leetcode-shu-zu-de-xiang-dui-pai-xu/"/>
       <url>/2019/07/31/leetcode-shu-zu-de-xiang-dui-pai-xu/</url>
@@ -708,9 +735,9 @@
       
         <tags>
             
-            <tag> node </tag>
-            
             <tag> js </tag>
+            
+            <tag> node </tag>
             
             <tag> es6 </tag>
             
