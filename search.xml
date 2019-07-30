@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>leetcode-数组的相对排序</title>
+      <link href="/2019/07/31/leetcode-shu-zu-de-xiang-dui-pai-xu/"/>
+      <url>/2019/07/31/leetcode-shu-zu-de-xiang-dui-pai-xu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="数组的相对排序"><a href="#数组的相对排序" class="headerlink" title="数组的相对排序"></a>数组的相对排序</h2><p>给你两个数组，<code>arr1</code> 和 <code>arr2</code>，</p><ul><li><code>arr2</code> 中的元素各不相同</li><li><code>arr2</code> 中的每个元素都出现在 <code>arr1</code> 中<br>对 <code>arr1</code> 中的元素进行排序，使 <code>arr1</code> 中项的相对顺序和 <code>arr2</code> 中的相对顺序相同。未在 <code>arr2</code> 中出现过的元素需要按照升序放在 <code>arr1</code> 的末尾。</li></ul><p>示例：</p><pre><code>输入：arr1 = [2,3,1,3,2,4,6,7,9,2,19], arr2 = [2,1,4,3,9,6]输出：[2,2,2,1,4,3,3,9,6,7,19]</code></pre><p>提示：</p><ul><li><code>arr1.length, arr2.length &lt;= 1000</code></li><li><code>0 &lt;= arr1[i], arr2[i] &lt;= 1000</code></li><li><code>arr2</code> 中的元素 <code>arr2[i]</code> 各不相同</li><li><code>arr2</code> 中的每个元素 <code>arr2[i]</code> 都出现在 <code>arr1</code> 中</li></ul><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/** * @param {number[]} arr1 * @param {number[]} arr2 * @return {number[]} */</span><span class="token keyword">var</span> relativeSortArray <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>arr1<span class="token punctuation">,</span> arr2<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token keyword">var</span> arr3 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>    <span class="token keyword">var</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    arr2<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>        map<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>    <span class="token punctuation">}</span><span class="token punctuation">)</span>    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>arr1<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>map<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>arr1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>            arr3<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>arr1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>            <span class="token keyword">var</span> arr <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span>arr1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>            arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>arr1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>            map<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span>arr1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> arr<span class="token punctuation">)</span>        <span class="token punctuation">}</span>    <span class="token punctuation">}</span>    <span class="token keyword">var</span> arr4 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>    map<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>        arr4 <span class="token operator">=</span> arr4<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>    <span class="token punctuation">}</span><span class="token punctuation">)</span>        <span class="token keyword">return</span> arr4<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>arr3<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span><span class="token keyword">return</span> a <span class="token operator">-</span> b<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> leetcode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>leetcode-等价多米诺骨牌对的数量</title>
+      <link href="/2019/07/30/leetcode-deng-jie-duo-mi-nuo-gu-pai-dui-de-shu-liang/"/>
+      <url>/2019/07/30/leetcode-deng-jie-duo-mi-nuo-gu-pai-dui-de-shu-liang/</url>
+      
+        <content type="html"><![CDATA[<h2 id="等价多米诺骨牌对的数量"><a href="#等价多米诺骨牌对的数量" class="headerlink" title="等价多米诺骨牌对的数量"></a>等价多米诺骨牌对的数量</h2><p>给你一个由一些多米诺骨牌组成的列表 <code>dominoes</code>。</p><p>如果其中某一张多米诺骨牌可以通过旋转 0 度或 180 度得到另一张多米诺骨牌，我们就认为这两张牌是等价的。</p><p>形式上，<code>dominoes[i] = [a, b]</code>和 <code>dominoes[j] = [c, d]</code> 等价的前提是 <code>a==c</code> 且 <code>b==d</code>，或是 <code>a==d</code> 且 <code>b==c</code>。</p><p>在 <code>0 &lt;= i &lt; j &lt; dominoes.length</code> 的前提下，找出满足 <code>dominoes[i]</code> 和 <code>dominoes[j]</code> 等价的骨牌对 <code>(i, j)</code> 的数量。</p><p>示例：</p><pre><code>输入：dominoes = [[1,2],[2,1],[3,4],[5,6]]输出：1</code></pre><p>提示：</p><pre><code>· 1 &lt;= dominoes.length &lt;= 40000· 1 &lt;= dominoes[i][j] &lt;= 9</code></pre><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/** * @param {number[][]} dominoes * @return {number} */</span><span class="token keyword">var</span> numEquivDominoPairs <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>dominoes<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token keyword">var</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> dominoes<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> j <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> dominoes<span class="token punctuation">.</span>length<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>dominoes<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> dominoes<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> dominoes<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> dominoes<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token punctuation">(</span>dominoes<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> dominoes<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> dominoes<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> dominoes<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>                count<span class="token operator">++</span>            <span class="token punctuation">}</span>        <span class="token punctuation">}</span>    <span class="token punctuation">}</span>    <span class="token keyword">return</span> count<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> leetcode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>leetcode-第 N 个泰波那契数</title>
       <link href="/2019/07/30/leetcode-di-n-ge-tai-bo-na-qi-shu/"/>
       <url>/2019/07/30/leetcode-di-n-ge-tai-bo-na-qi-shu/</url>
@@ -11,6 +65,20 @@
         <content type="html"><![CDATA[<h2 id="第-N-个泰波那契数"><a href="#第-N-个泰波那契数" class="headerlink" title="第 N 个泰波那契数"></a>第 N 个泰波那契数</h2><p>泰波那契序列 Tn 定义如下： </p><p>T0 = 0, T1 = 1, T2 = 1, 且在 n &gt;= 0 的条件下 Tn+3 = Tn + Tn+1 + Tn+2</p><p>给你整数 n，请返回第 n 个泰波那契数 Tn 的值。</p><p>示例 1：</p><pre><code>输入：n = 4输出：4解释：T_3 = 0 + 1 + 1 = 2T_4 = 1 + 1 + 2 = 4</code></pre><p>示例 2：</p><pre><code>输入：n = 25输出：1389537</code></pre><p>提示：</p><pre><code>· 0 &lt;= n &lt;= 37· 答案保证是一个 32 位整数，即 answer &lt;= 2^31 - 1。</code></pre><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/** * @param {number} n * @return {number} */</span><span class="token keyword">var</span> tribonacci <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span>    <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">></span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>            arr<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> arr<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> arr<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">]</span>        <span class="token punctuation">}</span>       <span class="token punctuation">}</span>    <span class="token keyword">return</span> arr<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>]]></content>
       
       
+      <categories>
+          
+          <category> leetcode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+            <tag> javascript </tag>
+            
+        </tags>
       
     </entry>
     
