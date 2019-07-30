@@ -4,6 +4,46 @@
   
     
     <entry>
+      <title>leetcode-第 N 个泰波那契数</title>
+      <link href="/2019/07/30/leetcode-di-n-ge-tai-bo-na-qi-shu/"/>
+      <url>/2019/07/30/leetcode-di-n-ge-tai-bo-na-qi-shu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="第-N-个泰波那契数"><a href="#第-N-个泰波那契数" class="headerlink" title="第 N 个泰波那契数"></a>第 N 个泰波那契数</h2><p>泰波那契序列 Tn 定义如下： </p><p>T0 = 0, T1 = 1, T2 = 1, 且在 n &gt;= 0 的条件下 Tn+3 = Tn + Tn+1 + Tn+2</p><p>给你整数 n，请返回第 n 个泰波那契数 Tn 的值。</p><p>示例 1：</p><pre><code>输入：n = 4输出：4解释：T_3 = 0 + 1 + 1 = 2T_4 = 1 + 1 + 2 = 4</code></pre><p>示例 2：</p><pre><code>输入：n = 25输出：1389537</code></pre><p>提示：</p><pre><code>· 0 &lt;= n &lt;= 37· 答案保证是一个 32 位整数，即 answer &lt;= 2^31 - 1。</code></pre><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/** * @param {number} n * @return {number} */</span><span class="token keyword">var</span> tribonacci <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span>    <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">></span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>            arr<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> arr<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> arr<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">]</span>        <span class="token punctuation">}</span>       <span class="token punctuation">}</span>    <span class="token keyword">return</span> arr<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>leetcode-二进制求和</title>
+      <link href="/2019/07/29/leetcode-er-jin-zhi-qiu-he/"/>
+      <url>/2019/07/29/leetcode-er-jin-zhi-qiu-he/</url>
+      
+        <content type="html"><![CDATA[<p>给定两个二进制字符串，返回他们的和（用二进制表示）。</p><p>输入为非空字符串且只包含数字 1 和 0。</p><p>示例 1:</p><pre><code>输入: a = &quot;11&quot;, b = &quot;1&quot;输出: &quot;100&quot;</code></pre><p>示例 2:</p><pre><code>输入: a = &quot;1010&quot;, b = &quot;1011&quot;输出: &quot;10101&quot;</code></pre><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/** * @param {string} a * @param {string} b * @return {string} */</span><span class="token keyword">var</span> addBinary <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token keyword">var</span> c <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>    <span class="token keyword">return</span> <span class="token function">to2</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token keyword">function</span> <span class="token function">to2</span><span class="token punctuation">(</span>str<span class="token punctuation">,</span>a<span class="token punctuation">)</span> <span class="token punctuation">{</span>   <span class="token keyword">var</span> arr <span class="token operator">=</span> a <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">parseInt</span><span class="token punctuation">(</span>str<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>str<span class="token operator">%</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">}</span>    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">parseInt</span><span class="token punctuation">(</span>str<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>       arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>str<span class="token operator">%</span><span class="token number">2</span><span class="token punctuation">)</span>       <span class="token function">to2</span><span class="token punctuation">(</span><span class="token function">parseInt</span><span class="token punctuation">(</span>str<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> arr<span class="token punctuation">)</span>    <span class="token punctuation">}</span>   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>   <span class="token keyword">return</span> arr<span class="token punctuation">}</span></code></pre><p>再一次遇到了js的运算上限问题</p><p><code>10100000100100110110010000010101111011011001101110111111111101000000101111001110001111100001101</code> –&gt; <code>2.484789315402498e+28</code><br><code>110101001011101110001111100110001010100001101011101010000011011011001011101111001100000011011110011</code> –&gt; <code>5.2670055459872975e+29</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> leetcode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>leetcode-加一</title>
       <link href="/2019/07/29/leetcode-jia-yi/"/>
       <url>/2019/07/29/leetcode-jia-yi/</url>
