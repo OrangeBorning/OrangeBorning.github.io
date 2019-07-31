@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>leetcode-删除字符串中的所有相邻重复项</title>
+      <link href="/2019/07/31/leetcode-shan-chu-zi-fu-chuan-zhong-de-suo-you-xiang-lin-chong-fu-xiang/"/>
+      <url>/2019/07/31/leetcode-shan-chu-zi-fu-chuan-zhong-de-suo-you-xiang-lin-chong-fu-xiang/</url>
+      
+        <content type="html"><![CDATA[<h2 id="删除字符串中的所有相邻重复项"><a href="#删除字符串中的所有相邻重复项" class="headerlink" title="删除字符串中的所有相邻重复项"></a>删除字符串中的所有相邻重复项</h2><p>给出由小写字母组成的字符串 <code>S</code>，重复项删除操作会选择两个相邻且相同的字母，并删除它们。</p><p>在 <code>S</code> 上反复执行重复项删除操作，直到无法继续删除。</p><p>在完成所有重复项删除操作后返回最终的字符串。答案保证唯一。</p><p>示例：</p><pre><code>输入：&quot;abbaca&quot;输出：&quot;ca&quot;解释：例如，在 &quot;abbaca&quot; 中，我们可以删除 &quot;bb&quot; 由于两字母相邻且相同，这是此时唯一可以执行删除操作的重复项。之后我们得到字符串 &quot;aaca&quot;，其中又只有 &quot;aa&quot; 可以执行重复项删除操作，所以最后的字符串为 &quot;ca&quot;。</code></pre><p>提示：</p><ol><li><code>1 &lt;= S.length &lt;= 20000</code></li><li><code>S</code> 仅由小写英文字母组成。</li></ol><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/** * @param {string} S * @return {string} */</span><span class="token keyword">var</span> removeDuplicates <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>S<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token keyword">var</span> arr <span class="token operator">=</span> S<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> arr<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>            arr<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>            i <span class="token operator">=</span> <span class="token number">0</span>        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>            i<span class="token operator">++</span>        <span class="token punctuation">}</span>    <span class="token punctuation">}</span>    <span class="token keyword">return</span> arr<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> leetcode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>leetcode-高度检查器</title>
       <link href="/2019/07/31/leetcode-gao-du-jian-cha-qi/"/>
       <url>/2019/07/31/leetcode-gao-du-jian-cha-qi/</url>
@@ -870,9 +897,9 @@
       
         <tags>
             
-            <tag> js </tag>
-            
             <tag> node </tag>
+            
+            <tag> js </tag>
             
             <tag> es6 </tag>
             

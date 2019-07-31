@@ -4,9 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="iRobotjs, 朱晓鹏">
-    <meta name="description" content="iRobotjs: 企业微信群机器人js
-">
+    <meta name="keywords" content="leetcode-删除字符串中的所有相邻重复项, 朱晓鹏">
+    <meta name="description" content="删除字符串中的所有相邻重复项给出由小写字母组成的字符串 S，重复项删除操作会选择两个相邻且相同的字母，并删除它们。
+在 S 上反复执行重复项删除操作，直到无法继续删除。
+在完成所有重复项删除操作后返回最终的字符串。答案保证唯一。
+示例：
+输">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>iRobotjs | 朱晓鹏</title>
+    <title>leetcode-删除字符串中的所有相邻重复项 | 朱晓鹏</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -243,13 +246,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        iRobotjs
+                        leetcode-删除字符串中的所有相邻重复项
                     </div>
                 </div>
             </div>
@@ -360,16 +363,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/node/" target="_blank">
-                                <span class="chip bg-color">node</span>
+                            <a href="/tags/leetcode/" target="_blank">
+                                <span class="chip bg-color">leetcode</span>
                             </a>
                         
-                            <a href="/tags/js/" target="_blank">
-                                <span class="chip bg-color">js</span>
-                            </a>
-                        
-                            <a href="/tags/es6/" target="_blank">
-                                <span class="chip bg-color">es6</span>
+                            <a href="/tags/javascript/" target="_blank">
+                                <span class="chip bg-color">javascript</span>
                             </a>
                         
                     </div>
@@ -380,16 +379,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/node/" class="post-category" target="_blank">
-                                node
-                            </a>
-                        
-                            <a href="/categories/node/js/" class="post-category" target="_blank">
-                                js
-                            </a>
-                        
-                            <a href="/categories/node/js/es6/" class="post-category" target="_blank">
-                                es6
+                            <a href="/categories/leetcode/" class="post-category" target="_blank">
+                                leetcode
                             </a>
                         
                     </div>
@@ -400,7 +391,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-07-09
+                    2019-07-31
                 </div>
 
                 
@@ -416,7 +407,34 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a href="https://github.com/OrangeBorning/iRobotjs" target="_blank" rel="noopener">iRobotjs</a>: 企业微信群机器人js</p>
+                <h2 id="删除字符串中的所有相邻重复项"><a href="#删除字符串中的所有相邻重复项" class="headerlink" title="删除字符串中的所有相邻重复项"></a>删除字符串中的所有相邻重复项</h2><p>给出由小写字母组成的字符串 <code>S</code>，重复项删除操作会选择两个相邻且相同的字母，并删除它们。</p>
+<p>在 <code>S</code> 上反复执行重复项删除操作，直到无法继续删除。</p>
+<p>在完成所有重复项删除操作后返回最终的字符串。答案保证唯一。</p>
+<p>示例：</p>
+<pre><code>输入：&quot;abbaca&quot;
+输出：&quot;ca&quot;
+解释：
+例如，在 &quot;abbaca&quot; 中，我们可以删除 &quot;bb&quot; 由于两字母相邻且相同，这是此时唯一可以执行删除操作的重复项。之后我们得到字符串 &quot;aaca&quot;，其中又只有 &quot;aa&quot; 可以执行重复项删除操作，所以最后的字符串为 &quot;ca&quot;。</code></pre><p>提示：</p>
+<ol>
+<li><code>1 &lt;= S.length &lt;= 20000</code></li>
+<li><code>S</code> 仅由小写英文字母组成。</li>
+</ol>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/**
+ * @param {string} S
+ * @return {string}
+ */</span>
+<span class="token keyword">var</span> removeDuplicates <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>S<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> arr <span class="token operator">=</span> S<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> arr<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            arr<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+            i <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            i<span class="token operator">++</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> arr<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 
             </div>
             <hr/>
@@ -451,9 +469,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《iRobotjs》
+                    《leetcode-删除字符串中的所有相邻重复项》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/09/irobotjs/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/31/leetcode-shan-chu-zi-fu-chuan-zhong-de-suo-you-xiang-lin-chong-fu-xiang/" property="cc:attributionName"
                rel="cc:attributionURL">
                 朱晓鹏
             </a> 采用
@@ -493,51 +511,56 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/07/09/utopia-swagger/">
+                <a href="/2019/07/31/leetcode-shan-chu-zi-fu-chuan-zhong-de-suo-you-xiang-lin-chong-fu-xiang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="utopia-swagger">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="leetcode-删除字符串中的所有相邻重复项">
                         
-                        <span class="card-title">utopia-swagger</span>
+                        <span class="card-title">leetcode-删除字符串中的所有相邻重复项</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            utopia-swagger: nodejs swagger helper
-
+                            删除字符串中的所有相邻重复项给出由小写字母组成的字符串 S，重复项删除操作会选择两个相邻且相同的字母，并删除它们。
+在 S 上反复执行重复项删除操作，直到无法继续删除。
+在完成所有重复项删除操作后返回最终的字符串。答案保证唯一。
+示例：
+输
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/vscode/" class="post-category" target="_blank">
-                                    vscode
+                            <a href="/categories/leetcode/" class="post-category" target="_blank">
+                                    leetcode
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vscode/" target="_blank">
-                        <span class="chip bg-color">vscode</span>
+                    <a href="/tags/leetcode/" target="_blank">
+                        <span class="chip bg-color">leetcode</span>
                     </a>
                     
-                    <a href="/tags/swagger/" target="_blank">
-                        <span class="chip bg-color">swagger</span>
+                    <a href="/tags/javascript/" target="_blank">
+                        <span class="chip bg-color">javascript</span>
                     </a>
                     
                 </div>
@@ -551,32 +574,36 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/07/09/irobotpy/">
+                <a href="/2019/07/31/leetcode-gao-du-jian-cha-qi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="iRobotPy">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="leetcode-高度检查器">
                         
-                        <span class="card-title">iRobotPy</span>
+                        <span class="card-title">leetcode-高度检查器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            iRobotPy: 企业微信群机器人python
-
+                            高度检查器学校在拍年度纪念照时，一般要求学生按照 非递减 的高度顺序排列。
+请你返回至少有多少个学生没有站在正确位置数量。该人数指的是：能让所有学生以 非递减 高度排列的必要移动人数。
+示例：
+输入：[1,1,4,2,1,3]
+输出：3
+解
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-09
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-31
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python3/" class="post-category" target="_blank">
-                                    python3
+                            <a href="/categories/leetcode/" class="post-category" target="_blank">
+                                    leetcode
                                 </a>
                             
                             
@@ -586,8 +613,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python3/" target="_blank">
-                        <span class="chip bg-color">python3</span>
+                    <a href="/tags/leetcode/" target="_blank">
+                        <span class="chip bg-color">leetcode</span>
+                    </a>
+                    
+                    <a href="/tags/javascript/" target="_blank">
+                        <span class="chip bg-color">javascript</span>
                     </a>
                     
                 </div>
