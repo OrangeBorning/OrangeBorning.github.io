@@ -4,9 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="iRobotjs, 朱晓鹏">
-    <meta name="description" content="iRobotjs: 企业微信群机器人js
-">
+    <meta name="keywords" content="leetcode-分糖果 II, 朱晓鹏">
+    <meta name="description" content="分糖果 II排排坐，分糖果。
+我们买了一些糖果 candies，打算把它们分给排好队的 n = num_people 个小朋友。
+给第一个小朋友 1 颗糖果，第二个小朋友 2 颗，依此类推，直到给最后一个小朋友 n 颗糖果。
+然后，我们再回">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>iRobotjs | 朱晓鹏</title>
+    <title>leetcode-分糖果 II | 朱晓鹏</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -243,13 +245,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        iRobotjs
+                        leetcode-分糖果 II
                     </div>
                 </div>
             </div>
@@ -360,16 +362,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/node/" target="_blank">
-                                <span class="chip bg-color">node</span>
+                            <a href="/tags/leetcode/" target="_blank">
+                                <span class="chip bg-color">leetcode</span>
                             </a>
                         
-                            <a href="/tags/js/" target="_blank">
-                                <span class="chip bg-color">js</span>
-                            </a>
-                        
-                            <a href="/tags/es6/" target="_blank">
-                                <span class="chip bg-color">es6</span>
+                            <a href="/tags/javascript/" target="_blank">
+                                <span class="chip bg-color">javascript</span>
                             </a>
                         
                     </div>
@@ -380,16 +378,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/node/" class="post-category" target="_blank">
-                                node
-                            </a>
-                        
-                            <a href="/categories/node/js/" class="post-category" target="_blank">
-                                js
-                            </a>
-                        
-                            <a href="/categories/node/js/es6/" class="post-category" target="_blank">
-                                es6
+                            <a href="/categories/leetcode/" class="post-category" target="_blank">
+                                leetcode
                             </a>
                         
                     </div>
@@ -400,7 +390,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-07-09
+                    2019-07-31
                 </div>
 
                 
@@ -416,7 +406,58 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a href="https://github.com/OrangeBorning/iRobotjs" target="_blank" rel="noopener">iRobotjs</a>: 企业微信群机器人js</p>
+                <h2 id="分糖果-II"><a href="#分糖果-II" class="headerlink" title="分糖果 II"></a>分糖果 II</h2><p>排排坐，分糖果。</p>
+<p>我们买了一些糖果 <code>candies</code>，打算把它们分给排好队的 <code>n = num_people</code> 个小朋友。</p>
+<p>给第一个小朋友 1 颗糖果，第二个小朋友 2 颗，依此类推，直到给最后一个小朋友 <code>n</code> 颗糖果。</p>
+<p>然后，我们再回到队伍的起点，给第一个小朋友 <code>n + 1</code> 颗糖果，第二个小朋友 <code>n + 2</code> 颗，依此类推，直到给最后一个小朋友 <code>2 * n</code> 颗糖果。</p>
+<p>重复上述过程（每次都比上一次多给出一颗糖果，当到达队伍终点后再次从队伍起点开始），直到我们分完所有的糖果。注意，就算我们手中的剩下糖果数不够（不比前一次发出的糖果多），这些糖果也会全部发给当前的小朋友。</p>
+<p>返回一个长度为 <code>num_people</code>、元素之和为 <code>candies</code> 的数组，以表示糖果的最终分发情况（即 <code>ans[i]</code> 表示第 <code>i</code> 个小朋友分到的糖果数）。</p>
+<p>示例 1：</p>
+<pre><code>输入：candies = 7, num_people = 4
+输出：[1,2,3,1]
+解释：
+第一次，ans[0] += 1，数组变为 [1,0,0,0]。
+第二次，ans[1] += 2，数组变为 [1,2,0,0]。
+第三次，ans[2] += 3，数组变为 [1,2,3,0]。
+第四次，ans[3] += 1（因为此时只剩下 1 颗糖果），最终数组变为 [1,2,3,1]。</code></pre><p>示例 2：</p>
+<pre><code>输入：candies = 10, num_people = 3
+输出：[5,2,3]
+解释：
+第一次，ans[0] += 1，数组变为 [1,0,0]。
+第二次，ans[1] += 2，数组变为 [1,2,0]。
+第三次，ans[2] += 3，数组变为 [1,2,3]。
+第四次，ans[0] += 4，最终数组变为 [5,2,3]。</code></pre><p>提示：</p>
+<ul>
+<li>1 &lt;= candies &lt;= 10^9</li>
+<li>1 &lt;= num_people &lt;= 1000</li>
+</ul>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/**
+ * @param {number} candies
+ * @param {number} num_people
+ * @return {number[]}
+ */</span>
+<span class="token keyword">var</span> distributeCandies <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>candies<span class="token punctuation">,</span> num_people<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>num_people<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">var</span> candiesCount <span class="token operator">=</span> candies
+    <span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>candiesCount <span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>candiesCount<span class="token punctuation">)</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">==</span> num_people<span class="token punctuation">)</span><span class="token punctuation">{</span>
+          i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+          j<span class="token operator">++</span>
+        <span class="token punctuation">}</span> 
+        arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> candiesCount <span class="token operator">></span> <span class="token punctuation">(</span>j<span class="token operator">*</span>num_people <span class="token operator">+</span> <span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">?</span><span class="token punctuation">(</span>j<span class="token operator">*</span>num_people <span class="token operator">+</span> <span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> candiesCount<span class="token punctuation">;</span>
+        candiesCount <span class="token operator">-</span><span class="token operator">=</span> <span class="token punctuation">(</span>j<span class="token operator">*</span>num_people <span class="token operator">+</span> <span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+        i<span class="token operator">++</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> arr
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 
             </div>
             <hr/>
@@ -451,9 +492,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《iRobotjs》
+                    《leetcode-分糖果 II》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/09/irobotjs/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/31/leetcode-fen-tang-guo-ii/" property="cc:attributionName"
                rel="cc:attributionURL">
                 朱晓鹏
             </a> 采用
@@ -493,51 +534,55 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/07/09/utopia-swagger/">
+                <a href="/2019/07/31/leetcode-fen-tang-guo-ii/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="utopia-swagger">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="leetcode-分糖果 II">
                         
-                        <span class="card-title">utopia-swagger</span>
+                        <span class="card-title">leetcode-分糖果 II</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            utopia-swagger: nodejs swagger helper
-
+                            分糖果 II排排坐，分糖果。
+我们买了一些糖果 candies，打算把它们分给排好队的 n = num_people 个小朋友。
+给第一个小朋友 1 颗糖果，第二个小朋友 2 颗，依此类推，直到给最后一个小朋友 n 颗糖果。
+然后，我们再回
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/vscode/" class="post-category" target="_blank">
-                                    vscode
+                            <a href="/categories/leetcode/" class="post-category" target="_blank">
+                                    leetcode
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vscode/" target="_blank">
-                        <span class="chip bg-color">vscode</span>
+                    <a href="/tags/leetcode/" target="_blank">
+                        <span class="chip bg-color">leetcode</span>
                     </a>
                     
-                    <a href="/tags/swagger/" target="_blank">
-                        <span class="chip bg-color">swagger</span>
+                    <a href="/tags/javascript/" target="_blank">
+                        <span class="chip bg-color">javascript</span>
                     </a>
                     
                 </div>
@@ -551,32 +596,34 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/07/09/irobotpy/">
+                <a href="/2019/07/31/leetcode-ip-di-zhi-wu-xiao-hua/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="iRobotPy">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="leetcode-IP 地址无效化">
                         
-                        <span class="card-title">iRobotPy</span>
+                        <span class="card-title">leetcode-IP 地址无效化</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            iRobotPy: 企业微信群机器人python
-
+                            地址无效化给你一个有效的 IPv4 地址 address，返回这个 IP 地址的无效化版本。
+所谓无效化 IP 地址，其实就是用 &quot;[.]&quot; 代替了每个 &quot;.&quot;。
+示例 1：
+输入：address =
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-09
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-30
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python3/" class="post-category" target="_blank">
-                                    python3
+                            <a href="/categories/leetcode/" class="post-category" target="_blank">
+                                    leetcode
                                 </a>
                             
                             
@@ -586,8 +633,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python3/" target="_blank">
-                        <span class="chip bg-color">python3</span>
+                    <a href="/tags/leetcode/" target="_blank">
+                        <span class="chip bg-color">leetcode</span>
+                    </a>
+                    
+                    <a href="/tags/javascript/" target="_blank">
+                        <span class="chip bg-color">javascript</span>
                     </a>
                     
                 </div>

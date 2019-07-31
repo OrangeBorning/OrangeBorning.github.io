@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>leetcode-分糖果 II</title>
+      <link href="/2019/07/31/leetcode-fen-tang-guo-ii/"/>
+      <url>/2019/07/31/leetcode-fen-tang-guo-ii/</url>
+      
+        <content type="html"><![CDATA[<h2 id="分糖果-II"><a href="#分糖果-II" class="headerlink" title="分糖果 II"></a>分糖果 II</h2><p>排排坐，分糖果。</p><p>我们买了一些糖果 <code>candies</code>，打算把它们分给排好队的 <code>n = num_people</code> 个小朋友。</p><p>给第一个小朋友 1 颗糖果，第二个小朋友 2 颗，依此类推，直到给最后一个小朋友 <code>n</code> 颗糖果。</p><p>然后，我们再回到队伍的起点，给第一个小朋友 <code>n + 1</code> 颗糖果，第二个小朋友 <code>n + 2</code> 颗，依此类推，直到给最后一个小朋友 <code>2 * n</code> 颗糖果。</p><p>重复上述过程（每次都比上一次多给出一颗糖果，当到达队伍终点后再次从队伍起点开始），直到我们分完所有的糖果。注意，就算我们手中的剩下糖果数不够（不比前一次发出的糖果多），这些糖果也会全部发给当前的小朋友。</p><p>返回一个长度为 <code>num_people</code>、元素之和为 <code>candies</code> 的数组，以表示糖果的最终分发情况（即 <code>ans[i]</code> 表示第 <code>i</code> 个小朋友分到的糖果数）。</p><p>示例 1：</p><pre><code>输入：candies = 7, num_people = 4输出：[1,2,3,1]解释：第一次，ans[0] += 1，数组变为 [1,0,0,0]。第二次，ans[1] += 2，数组变为 [1,2,0,0]。第三次，ans[2] += 3，数组变为 [1,2,3,0]。第四次，ans[3] += 1（因为此时只剩下 1 颗糖果），最终数组变为 [1,2,3,1]。</code></pre><p>示例 2：</p><pre><code>输入：candies = 10, num_people = 3输出：[5,2,3]解释：第一次，ans[0] += 1，数组变为 [1,0,0]。第二次，ans[1] += 2，数组变为 [1,2,0]。第三次，ans[2] += 3，数组变为 [1,2,3]。第四次，ans[0] += 4，最终数组变为 [5,2,3]。</code></pre><p>提示：</p><ul><li>1 &lt;= candies &lt;= 10^9</li><li>1 &lt;= num_people &lt;= 1000</li></ul><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/** * @param {number} candies * @param {number} num_people * @return {number[]} */</span><span class="token keyword">var</span> distributeCandies <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>candies<span class="token punctuation">,</span> num_people<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>num_people<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>        arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>    <span class="token punctuation">}</span>    <span class="token keyword">var</span> candiesCount <span class="token operator">=</span> candies    <span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token keyword">var</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token keyword">while</span> <span class="token punctuation">(</span>candiesCount <span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>candiesCount<span class="token punctuation">)</span>        <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">==</span> num_people<span class="token punctuation">)</span><span class="token punctuation">{</span>          i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>          j<span class="token operator">++</span>        <span class="token punctuation">}</span>         arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> candiesCount <span class="token operator">></span> <span class="token punctuation">(</span>j<span class="token operator">*</span>num_people <span class="token operator">+</span> <span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">?</span><span class="token punctuation">(</span>j<span class="token operator">*</span>num_people <span class="token operator">+</span> <span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> candiesCount<span class="token punctuation">;</span>        candiesCount <span class="token operator">-</span><span class="token operator">=</span> <span class="token punctuation">(</span>j<span class="token operator">*</span>num_people <span class="token operator">+</span> <span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>        i<span class="token operator">++</span>    <span class="token punctuation">}</span>    <span class="token keyword">return</span> arr<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> leetcode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>leetcode-IP 地址无效化</title>
       <link href="/2019/07/31/leetcode-ip-di-zhi-wu-xiao-hua/"/>
       <url>/2019/07/31/leetcode-ip-di-zhi-wu-xiao-hua/</url>
@@ -735,9 +762,9 @@
       
         <tags>
             
-            <tag> js </tag>
-            
             <tag> node </tag>
+            
+            <tag> js </tag>
             
             <tag> es6 </tag>
             
