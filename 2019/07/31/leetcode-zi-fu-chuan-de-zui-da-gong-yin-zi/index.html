@@ -4,8 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="leetcode-Bigram 分词, 朱晓鹏">
-    <meta name="description" content="给出第一个词 first 和第二个词 second，考虑在某些文本 text中可能以 &amp;quot;first second third&amp;quot; 形式出现的情况，其中 second 紧随 first 出现，third 紧随 second ">
+    <meta name="keywords" content="leetcode-字符串的最大公因子, 朱晓鹏">
+    <meta name="description" content="对于字符串 S 和 T，只有在 S = T + ... + T（T 与自身连接 1 次或多次）时，我们才认定 “T 能除尽 S”。
+返回字符串 X，要求满足 X 能除尽 str1 且 X 能除尽 str2。
+示例 1：
+输入：str1 = ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>leetcode-Bigram 分词 | 朱晓鹏</title>
+    <title>leetcode-字符串的最大公因子 | 朱晓鹏</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -242,13 +245,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        leetcode-Bigram 分词
+                        leetcode-字符串的最大公因子
                     </div>
                 </div>
             </div>
@@ -403,35 +406,27 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>给出第一个词 <code>first</code> 和第二个词 <code>second</code>，考虑在某些文本 <code>text</code>中可能以 <code>&quot;first second third&quot;</code> 形式出现的情况，其中 <code>second</code> 紧随 <code>first</code> 出现，<code>third</code> 紧随 <code>second</code> 出现。</p>
-<p>对于每种这样的情况，将第三个词 <code>&quot;third&quot;</code> 添加到答案中，并返回答案。</p>
+                <p>对于字符串 <code>S</code> 和 <code>T</code>，只有在 <code>S = T + ... + T</code>（<code>T</code> 与自身连接 1 次或多次）时，我们才认定 “<code>T</code> 能除尽 <code>S</code>”。</p>
+<p>返回字符串 <code>X</code>，要求满足 <code>X</code> 能除尽 <code>str1</code> 且 <code>X</code> 能除尽 <code>str2</code>。</p>
 <p>示例 1：</p>
-<pre><code>输入：text = &quot;alice is a good girl she is a good student&quot;, first = &quot;a&quot;, second = &quot;good&quot;
-输出：[&quot;girl&quot;,&quot;student&quot;]</code></pre><p>示例 2：</p>
-<pre><code>输入：text = &quot;we will we will rock you&quot;, first = &quot;we&quot;, second = &quot;will&quot;
-输出：[&quot;we&quot;,&quot;rock&quot;]</code></pre><p>提示：</p>
+<pre><code>输入：str1 = &quot;ABCABC&quot;, str2 = &quot;ABC&quot;
+输出：&quot;ABC&quot;</code></pre><p>示例 2：</p>
+<pre><code>输入：str1 = &quot;ABABAB&quot;, str2 = &quot;ABAB&quot;
+输出：&quot;AB&quot;</code></pre><p>示例 3：</p>
+<pre><code>输入：str1 = &quot;LEET&quot;, str2 = &quot;CODE&quot;
+输出：&quot;&quot;</code></pre><p>提示：</p>
 <ol>
-<li><code>1 &lt;= text.length &lt;= 1000</code></li>
-<li><code>text</code> 由一些用空格分隔的单词组成，每个单词都由小写英文字母组成</li>
-<li><code>1 &lt;= first.length, second.length &lt;= 10</code></li>
-<li><code>first</code> 和 <code>second</code> 由小写英文字母组成</li>
+<li><code>1 &lt;= str1.length &lt;= 1000</code></li>
+<li><code>1 &lt;= str2.length &lt;= 1000</code></li>
+<li><code>str1[i]</code> 和 <code>str2[i]</code> 为大写英文字母</li>
 </ol>
-<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/**
- * @param {string} text
- * @param {string} first
- * @param {string} second
- * @return {string[]}
- */</span>
-<span class="token keyword">var</span> findOcurrences <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>text<span class="token punctuation">,</span> first<span class="token punctuation">,</span> second<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-    <span class="token keyword">var</span> textArr <span class="token operator">=</span> text<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>i <span class="token operator">&lt;</span> textArr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>textArr<span class="token punctuation">[</span>i<span class="token number">-2</span><span class="token punctuation">]</span> <span class="token operator">==</span> first <span class="token operator">&amp;&amp;</span> textArr<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span> <span class="token operator">==</span> second<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>textArr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> arr
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<p>```js<br>/**</p>
+<ul>
+<li>@param {string} str1</li>
+<li>@param {string} str2</li>
+<li>@return {string}</li>
+<li>/<br>var gcdOfStrings = function(str1, str2) {<br>var min = str1.length &gt;= str2.length ? str2 : str1<br>var max = str1.length &lt; str2.length ? str2 : str1<br>if(!max.includes(min)) {<pre><code>return &quot;&quot;</code></pre>}<br>var arr1 = max.split(min)<br>if(arr1.every(i =&gt; {return i == “”})) {<pre><code>return min</code></pre>}<br>if(arr1.filter(i =&gt; {return i !== “”}).length &gt; 1) {<pre><code>return &quot;&quot;</code></pre>} else {<pre><code>return gcdOfStrings(min, arr1.filter(i =&gt; {return i !== &quot;&quot;})[0])</code></pre>}<br>};<br>``</li>
+</ul>
 
             </div>
             <hr/>
@@ -466,9 +461,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《leetcode-Bigram 分词》
+                    《leetcode-字符串的最大公因子》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/31/leetcode-bigram-fen-ci/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/31/leetcode-zi-fu-chuan-de-zui-da-gong-yin-zi/" property="cc:attributionName"
                rel="cc:attributionURL">
                 朱晓鹏
             </a> 采用
@@ -508,9 +503,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/07/31/leetcode-zi-fu-chuan-de-zui-da-gong-yin-zi/">
                     <div class="card-image">
@@ -531,9 +527,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-31
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -546,6 +542,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -568,23 +565,19 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/07/31/leetcode-fu-xie-ling/">
+                <a href="/2019/07/31/leetcode-bigram-fen-ci/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="leetcode-复写零">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="leetcode-Bigram 分词">
                         
-                        <span class="card-title">leetcode-复写零</span>
+                        <span class="card-title">leetcode-Bigram 分词</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            复写零给你一个长度固定的整数数组 arr，请你将该数组中出现的每个零都复写一遍，并将其余的元素向右平移。
-注意：请不要在超过该数组长度的位置写入元素。
-要求：请对输入的数组 就地 进行上述修改，不要从函数返回任何东西。
-示例 1：
-输入：[
+                            给出第一个词 first 和第二个词 second，考虑在某些文本 text中可能以 &quot;first second third&quot; 形式出现的情况，其中 second 紧随 first 出现，third 紧随 second 
                         
                     </div>
                     <div class="publish-info">
