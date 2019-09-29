@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>想要做的事</title>
+      <link href="/2019/09/29/xiang-yao-zuo-de-shi/"/>
+      <url>/2019/09/29/xiang-yao-zuo-de-shi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="编程"><a href="#编程" class="headerlink" title="编程"></a>编程</h2><ul><li>Flutter</li><li>Android</li><li>IOS</li><li>React</li><li>React Native</li><li>TS</li><li>前端微服务</li></ul><h2 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h2><ul><li>游泳</li><li>健身</li><li>滑雪</li></ul><h2 id="外语"><a href="#外语" class="headerlink" title="外语"></a>外语</h2><ul><li>英语</li><li>日语</li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>2019年8月17日小记</title>
       <link href="/2019/08/17/2019-nian-8-yue-17-ri-xiao-ji/"/>
       <url>/2019/08/17/2019-nian-8-yue-17-ri-xiao-ji/</url>
@@ -1001,9 +1014,9 @@
       
         <tags>
             
-            <tag> node </tag>
-            
             <tag> js </tag>
+            
+            <tag> node </tag>
             
             <tag> es6 </tag>
             
